@@ -239,44 +239,44 @@ if game.PlaceId == 8506369721 then
     --color pickers
     
     
-    
+
     
     --sliders
-    sliderTab:AddSlider({
-        Name = "walkspeed",
-        Min = 0,
-        Max = 1000,
-        Default = 5,
-        Color = Color3.fromRGB(255,255,255),
-        Increment = 1,
-        ValueName = "walkspeed",
-        Callback = function(Value)
-            local function DefaultWalkSpeed(plr)
-                local humanoid = plr.Parent:FindFirstChild("Humanoid")
-                if humanoid then
-                    humanoid.WalkSpeed = Value
-                end
-            end
-        end    
-    })
+ sliderTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 0,
+	Max = 100,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
 
-    sliderTab:AddSlider({
-        Name = "jumppower",
-        Min = 0,
-        Max = 1000,
-        Default = 5,
-        Color = Color3.fromRGB(255,255,255),
-        Increment = 1,
-        ValueName = "jumppower",
-        Callback = function(Value)
-            local function DefaultWalkSpeed(plr)
-                local function DefaultWalkSpeed(plr)
-                    local humanoid = plr.Parent:FindFirstChild("Humanoid")
-                    if humanoid then
-                        humanoid.JumpPower = Value
-                    end
-                end
-    })
+ sliderTab:AddSlider({
+	Name = "Jump Power",
+	Min = 0,
+	Max = 100,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+--[[
+Name = <string> - The name of the slider.
+Min = <number> - The minimal value of the slider.
+Max = <number> - The maxium value of the slider.
+Increment = <number> - How much the slider will change value when dragging.
+Default = <number> - The default value of the slider.
+ValueName = <string> - The text after the value number.
+Callback = <function> - The function of the slider.
+]]
     
     --[[
     Name = <string> - The name of the slider.
